@@ -9,3 +9,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Humidity Pixel Art
 - Temp Pixels Art
+- Try-Catch to successfully clear LED Matrix
