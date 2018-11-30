@@ -1,8 +1,7 @@
 [![HitCount](http://hits.dwyl.com/OfficialMuffin/humid-pi.svg)](http://hits.dwyl.com/OfficialMuffin/humid-pi)
 
 # humid-pi
-
-##Prequisites
+##Prerequisites
  - Raspberry Pi 1/2/3 B+
  - Raspberry Pi Sense Hat
  - Official Raspberry 5V Power Supply
