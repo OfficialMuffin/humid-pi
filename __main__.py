@@ -121,7 +121,7 @@ if (sense.get_temperature() > 18) :
 		time.sleep(1
 		
 # If humidity high
-if (sense.get_humidity() > 18) :
+if (sense.get_humidity() > 50) :
 	images = [high_humidity]
 	count = 0
 
@@ -132,8 +132,8 @@ if (sense.get_humidity() > 18) :
 		# Wait 1 second
 		time.sleep(1)
 		
-# If humidity high
-if (sense.get_humidity() > 18) :
+# If humidity low
+if (sense.get_humidity() < 50) :
 	images = [low_humidity]
 	count = 0
 
