@@ -87,62 +87,63 @@ def cold_temp():
   ]
   return logo
   
+try:
+	# Print onto Console
+	print("Temp: %s C" % temp)
+	print("Humidity: %s %%rH" % humidity)
 
-# Print onto Console
-print("Temp: %s C" % temp)
-print("Humidity: %s %%rH" % humidity)
+	# Set LED matrix to scroll from right to left
+	sense.set_rotation(180)        
 
-# Set LED matrix to scroll from right to left
-sense.set_rotation(180)        
+	# If temp low
+	if (sense.get_temperature() < 18) :
+		images = [cold_temp]
+		count = 0
 
-# If temp low
-if (sense.get_temperature() < 18) :
-	images = [cold_temp]
-	count = 0
-
-	while True:
-		sense.set_pixels(images[count % len(images)]())
-		time.sleep(.75)
-		count += 1
-		# Wait 1 second
-		time.sleep(1)
+		while True:
+			sense.set_pixels(images[count % len(images)]())
+			time.sleep(.75)
+			count += 1
+			# Wait 1 second
+			time.sleep(1)
 
 
-# If temp high
-if (sense.get_temperature() > 18) :
-	images = [hot_temp]
-	count = 0
+	# If temp high
+	if (sense.get_temperature() > 18) :
+		images = [hot_temp]
+		count = 0
 
-	while True:
-		sense.set_pixels(images[count % len(images)]())
-		time.sleep(.75)
-		count += 1
-		# Wait 1 second
-		time.sleep(1
-		
-# If humidity high
-if (sense.get_humidity() > 50) :
-	images = [high_humidity]
-	count = 0
+		while True:
+			sense.set_pixels(images[count % len(images)]())
+			time.sleep(.75)
+			count += 1
+			# Wait 1 second
+			time.sleep(1
+			
+	# If humidity high
+	if (sense.get_humidity() > 50) :
+		images = [high_humidity]
+		count = 0
 
-	while True:
-		sense.set_pixels(images[count % len(images)]())
-		time.sleep(.75)
-		count += 1
-		# Wait 1 second
-		time.sleep(1)
-		
-# If humidity low
-if (sense.get_humidity() < 50) :
-	images = [low_humidity]
-	count = 0
+		while True:
+			sense.set_pixels(images[count % len(images)]())
+			time.sleep(.75)
+			count += 1
+			# Wait 1 second
+			time.sleep(1)
+			
+	# If humidity low
+	if (sense.get_humidity() < 50) :
+		images = [low_humidity]
+		count = 0
 
-	while True:
-		sense.set_pixels(images[count % len(images)]())
-		time.sleep(.75)
-		count += 1
-		# Wait 1 second
-		time.sleep(1)
+		while True:
+			sense.set_pixels(images[count % len(images)]())
+			time.sleep(.75)
+			count += 1
+			# Wait 1 second
+			time.sleep(1)
 
+except KeyboardInterrupt:
 # Clear LED matrix 
-sense.clear()      
+	sense.clear()      
